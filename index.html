@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Materials Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="ico/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+function summation()
+{
+    var input1 = document.getElementById('input1').value;
+	var input2 = document.getElementById("input2").value = "10";//Rare Steel
+    var input3 = document.getElementById("input3").value = "20000";//Copper
+    var input4 = document.getElementById("input4").value = "5000";//Darksteel
+	var input5 = document.getElementById("input5").value = "25";//Glittering Powder
+	var input7 = document.getElementById("input7").value = "100";//UC Steel
+	var total2 = (input1*input2);
+	var total3 = (input1*input3);
+	var total4 = (input1*input4);
+	var total5 = (input1*input5);
+	var total7 = (input1*input7);
+	//var sum1 = (input1)/* + (total2) +(total3)*/;
+	document.getElementById('input2').value = numberWithCommas(total2);
+	document.getElementById('input3').value = numberWithCommas(total3);
+	document.getElementById('input4').value = numberWithCommas(total4);
+	document.getElementById('input5').value = numberWithCommas(total5);
+	document.getElementById('input7').value = numberWithCommas(total7);
+    //document.getElementById('total').innerHTML = "Total = "+sum1;
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+</script> 
+<body class="p-3 mb-2 bg-dark text-white">
+<!-- As a heading -->
+<nav class="navbar-dark bg-dark">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button" href="index.html">Home</button>
+  </form>
+</nav>
+<div class="container">
+	<h1>Epic Gear Calculator Page</h1>
+	<p>Hello, I'm here to find out how many materials you need.</p>
+	<p><img src="img/E-Steel.png" alt="[E] Steel" width="32" height="32"><input id="input1" type="number" min="1" onchange="summation()"></p>
+	<p><img src="img/R-Steel.png" alt="[R] Steel" width="32" height="32"><input id="input2" min="1" type="text" readonly><i class="bi bi-arrow-right"></i><img src="/img/UC-Steel.png" alt="[UC] Steel" width="32" height="32"><input id="input7" min="1" type="text" readonly><p>
+	<p><img src="img/Copper.png" alt="Copper" width="32" height="32"><input id="input3" min="1" type="text" readonly></p>
+	<p><img src="img/Darksteel.png" alt="Darksteel" width="32" height="32"><input id="input4" min="1" type="text" readonly></p>
+	<p><img src="img/Glittering_powder.png" alt="Glittering_powder" width="32" height="32"><input id="input5" type="text" readonly></p>
+	<!-- <p id="total"></p>-->
+	<script src="js/bootstrap.bundle.min.js"></script>
+</div>
+</body>
+</html>
