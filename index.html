@@ -1,58 +1,4352 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Materials Calculator</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="ico/font/bootstrap-icons.css" rel="stylesheet">
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta property="og:type" content="news">
+		<meta property="og:title" content="GameSama.com - Life's a game, wanna play? | Home">
+		<meta property="og:description" content="Top 100 Free Private Game Servers Ranked By Popularity. Add You Game Server To our Toplist And Get More Players!">
+		<meta property="og:image" content="http://img8.mmo.mmo4arab.com/news/2013/06/07/ran1.jpg">
+		<meta property="og:url" content="http://gamesama.com">
+		<meta name="author" content="SeiferXIII">
+		<meta name="keywords" content="Ultima online, ragnarok online, top list, game, games, lineage, world of warcraft, warcraft 3, starcraft, diablo 2, star wars, counter strike, game toplist, lineage 2, game news, game sites, gaming sites, links, 100, 200">
+	
+    <title>GameSama.com - Life's a game, wanna play? | Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"f762eac6a0fc9b1b41e47c4a5c6bf84a",petok:"56d0d07bd4b5db5db9e6757999b9762b2de3ed8c-1453524008-1800",zone:"gamesama.com",rocket:"0",apps:{"infolinks":{"pid":"2467102","wsid":"4","site_status":"approved"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=38857570ac/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap.css" rel="stylesheet">
+	<link href='libnotify.css' rel='stylesheet'>
+	<!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src='humane.js'></script><link rel="shortcut icon" href="http://www.gamesama.com/gs.ico.html" />
+	<style>
+			.fa-spin-custom, .glyphicon-spin {
+			-webkit-animation: spin 1000ms infinite linear;
+			animation: spin 1000ms infinite linear;
+		}
+		@-webkit-keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(359deg);
+				transform: rotate(359deg);
+			}
+		}
+		@keyframes spin {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(359deg);
+				transform: rotate(359deg);
+			}
+		}
+		.verified {
+			  background-image: url(/s/E0feY-_hkDs.png);
+			  background-repeat: no-repeat;
+			  background-size: auto;
+			  background-position: 0 -56px;
+			}
+		.verified2 {
+			  background-image: url(/s/E0feY-_hkDs.png);
+			  background-repeat: no-repeat;
+			  background-size: auto;
+			  background-position: 0 -132px;
+			}
+	</style>
+
+    <!-- Custom CSS -->
+    <link href="shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+
 </head>
-<script type="text/javascript">
-function summation()
-{
-    var input1 = document.getElementById('input1').value;
-	var input2 = document.getElementById("input2").value = "10";//Rare Steel
-    var input3 = document.getElementById("input3").value = "20000";//Copper
-    var input4 = document.getElementById("input4").value = "5000";//Darksteel
-	var input5 = document.getElementById("input5").value = "25";//Glittering Powder
-	var input7 = document.getElementById("input7").value = "100";//UC Steel
-	var total2 = (input1*input2);
-	var total3 = (input1*input3);
-	var total4 = (input1*input4);
-	var total5 = (input1*input5);
-	var total7 = (input1*input7);
-	//var sum1 = (input1)/* + (total2) +(total3)*/;
-	document.getElementById('input2').value = numberWithCommas(total2);
-	document.getElementById('input3').value = numberWithCommas(total3);
-	document.getElementById('input4').value = numberWithCommas(total4);
-	document.getElementById('input5').value = numberWithCommas(total5);
-	document.getElementById('input7').value = numberWithCommas(total7);
-    //document.getElementById('total').innerHTML = "Total = "+sum1;
-}
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+<body>
+ 
+	 
 
-</script> 
-<body class="p-3 mb-2 bg-dark text-white">
-<!-- As a heading -->
-<nav class="navbar-dark bg-dark">
-  <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button" href="index.html">Home</button>
-  </form>
-</nav>
-<div class="container">
-	<h1>Epic Gear Calculator Page</h1>
-	<p>Hello, I'm here to find out how many materials you need.</p>
-	<p><img src="img/E-Steel.png" alt="[E] Steel" width="32" height="32"><input id="input1" type="number" min="1" onchange="summation()"></p>
-	<p><img src="img/R-Steel.png" alt="[R] Steel" width="32" height="32"><input id="input2" min="1" type="text" readonly><i class="bi bi-arrow-right"></i><img src="/img/UC-Steel.png" alt="[UC] Steel" width="32" height="32"><input id="input7" min="1" type="text" readonly><p>
-	<p><img src="img/Copper.png" alt="Copper" width="32" height="32"><input id="input3" min="1" type="text" readonly></p>
-	<p><img src="img/Darksteel.png" alt="Darksteel" width="32" height="32"><input id="input4" min="1" type="text" readonly></p>
-	<p><img src="img/Glittering_powder.png" alt="Glittering_powder" width="32" height="32"><input id="input5" type="text" readonly></p>
-	<!-- <p id="total"></p>-->
-	<script src="js/bootstrap.bundle.min.js"></script>
-</div>
-</body>
-</html>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.gamesama.com/index.html"><span class="glyphicon glyphicon-fire" style="color:red;"></span><span style="color:red;">Game</span>Sama.com</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            	
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 ajax-login-reload">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://www.gamesama.com/index.html">Home</a>
+                    </li>
+                     <li>
+                        <a href="http://www.gamesama.com/blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="http://www.gamesama.com/contact.html">Contact</a>
+                    </li>
+										<li class="dropdown ">
+                            <a href="http://www.gamesama.com/index.html#" class="dropdown-toggle" data-toggle="dropdown">Guest<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li ><a href="http://www.gamesama.com/login" >Login</a></li>
+                                <li ><a href="http://www.gamesama.com/register.html">Register</a></li>
+                                <!--<li class="divider"></li>
+                                <li ><a href="forgotpassword" id="ajax-link">Lost Password</a></li>-->
+                            </ul>
+                        </li>
+						
+                </ul>
+            </div>
+
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69848472-1', 'auto');
+  ga('send', 'pageview');
+
+</script>            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                
+				
+					 <!--
+<div class="panel panel-primary">
+			 <div class="panel-heading">
+					<h3 class="panel-title">Game Directory</h3>
+				  </div>
+				  <div class="panel-body">
+				  
+					
+													<ul class="list-group">
+														<li class="list-group-item"><a href="/game/Cabal-Online/">Cabal Online</a></li>
+														<li class="list-group-item"><a href="/game/Dragon-Nest/">Dragon Nest</a></li>
+													<li class="list-group-item"><a href="/game/Flyff/">Flyff</a></li>
+														<li class="list-group-item"><a href="/game/Luna-Online/">Luna Online</a></li>
+														<li class="list-group-item"><a href="/game/Mu-Online/">Mu Online</a></li>
+														<li class="list-group-item"><a href="/game/Perfect-World/">Perfect World</a></li>
+														<li class="list-group-item"><a href="/game/Ragnarok-Online/">Ragnarok Online</a></li>
+														<li class="list-group-item"><a href="/game/Ran-Online/">Ran Online</a></li>
+														<li class="list-group-item"><a href="/game/RF-Online/">RF Online</a></li>
+														<li class="list-group-item"><a href="/game/Runescape/">Runescape</a></li>
+														<li class="list-group-item"><a href="/game/Shaiya/">Shaiya</a></li>
+														<li class="list-group-item"><a href="/game/World-of-Warcraft/">World of Warcraft</a></li>
+													</ul>
+											
+					
+					
+				
+				
+				  </div>
+				</div>-->
+<div class="panel panel-primary">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Server Directory</h3>
+				  </div>
+				  <div class="panel-body">
+				  
+					<ul class="list-group">
+				 <li class="list-group-item">
+						
+						<a href="verified.html">Verified Servers</a>
+					  </li>
+					  <li class="list-group-item">
+						
+						<a href="rate/lowrate.html">Low Rate</a>
+					  </li>
+					  <li class="list-group-item">
+						
+						<a href="rate/midrate.html">Mid Rate</a>
+					  </li>
+					  <li class="list-group-item">
+						
+						<a href="rate/highrate.html">High Rate</a>
+					  </li>
+					  
+					</ul>
+					
+					
+					
+				
+				
+				  </div>
+				</div>
+								
+
+				
+				<BR>
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GSLeft1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4131599256273846"
+     data-ad-slot="1984305881"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+				
+				
+				
+                
+            </div>
+
+            <div class="col-md-6">
+
+                
+
+                <div class="row">
+
+				
+				 
+				<div id="content">
+				
+				<div class="alert alert-dismissible alert-info"><button type="button" class="close" data-dismiss="alert">X</button><b>Attention Server Owners!</b><BR> Servers with the age of 1 Year and above, <a href="http://www.gamesama.com/contact.html">Contact us</a> to Activate your Verified Integrity Seal. <span class="verified2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+<BR>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GSR3 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4131599256273846"
+     data-ad-slot="9367971881"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><BR>
+					<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=24" id="ajax-link" class="profile"><img src="http://oi59.tinypic.com/2d7f2ok.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">1</span></span>
+							<span class="label label-success">IN <span class="badge">1953</span></span>
+							<span class="label label-warning">OUT <span class="badge">3540</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/24.html" >
+							<b>BalikRAN Online PTC</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>RanPTC Gaming Style,Starting Level 120,Max Level 150,EP2 Exp Table,Hunt your own armor and weapon,127 skills only,No wipeout, rollback, edit, cheat.,Halinat balikan, tamis ng nakaraan., #TaraBalikRAN na!, #BROFist</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://balikran.com/?vnum=4"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=48" id="ajax-link" class="profile"><img src="http://oi65.tinypic.com/9r4y3a.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">2</span></span>
+							<span class="label label-success">IN <span class="badge">1513</span></span>
+							<span class="label label-warning">OUT <span class="badge">50</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/48.html" >
+							<b>GTRan Online - Ep9 Server</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>7 Classes / Starting Level 50 / Cap Level 220 / x10 Experience / x3 Item Drop Rate / x2 Gold Drop Rate / Quest System / ItemLink / ItemPreview / Official Items - Mobs - Skills - Maps / +9 Max Upgrade (+10 Items on Events) / ClubWars Every Wednesday &amp;ampamp Saturday / Battle of Conquerors / SchoolWars / ChipWars / RoyalRumble / Boss Hunting System / Guild &amp;ampampamp Shop Owner Package / Anti-Pots &amp;ampampamp Anti-Skill Activated to avoid AutoPots / Official Right-Click Wear/Unwear Function / HackShield Protected / No Reborn / Dota Multi-Kill Streak / Official TargetInfo / AFK / Gametime to VP / AutoSuryun System / AutoBTG System / Item Crafting System / New Gaming Interface</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://gt.trojan-networks.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=108" id="ajax-link" class="profile"><img src="http://suzaku-ran.net/cats.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">3</span></span>
+							<span class="label label-success">IN <span class="badge">1284</span></span>
+							<span class="label label-warning">OUT <span class="badge">458</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/108.html" >
+							Suzaku RAN Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Rates:	Midrate Server Episode:	Episode 8, 7-Class Server (with Assassin) Gameplay Setup:	Regeneration Base Server, Balanced Strategic Gaming Starting Level:	100 Max Level:	250 Max Skill:	237, ( Based on RanGS Official Skill, Modified for Suzaku ) Mob Settings:	Unlimited Mobs ( Leader System - Official ) Hunting	Easy Hunting Armors and Weapons Max Upgrade	+10* Donation System	We have plenty of premium services, but one thing is for sure: NO PAY TO WIN</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://suzaku-ran.net"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=91" id="ajax-link" class="profile"><img src="http://i60.tinypic.com/2reo3fq.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">4</span></span>
+							<span class="label label-success">IN <span class="badge">658</span></span>
+							<span class="label label-warning">OUT <span class="badge">71</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/91.html" >
+							TopRAN Classic EP7							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Hackshield Protected-4 Character Class-School Wars-230 Level Cap-7 to 207 Skill-Max Refine +10-Club Wars-PK Streak-24/7 Online-BTG Active-Voting System Every 12Hrs-No Over Power-Balaneced Gameplay-Lively and Growing Community-All Items Are Huntable</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://topranonline.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=100" id="ajax-link" class="profile"><img src="http://i63.tinypic.com/mt2pgz.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">5</span></span>
+							<span class="label label-success">IN <span class="badge">500</span></span>
+							<span class="label label-warning">OUT <span class="badge">53</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/100.html" >
+							Pinoy Hideout Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Episode 9 Server [6 Class Server] 
+Updated Files and Client 
+6 Class [Gunner, Extreme, Swordsman, Archer, Shaman, Brawler]
+ School Wars Activated. (Every 4hours, x3 A day) Starting 1pm
+with Auto Reward System (Top 10)
+Guild Wars Everyday at 7pm
+Up to 237 Official Skills Unlocked.
+Lahat ng Class Gamit na gamit.
+ Costumes with Stats on VoteShop
+ Guild Package Available
+Free +10 Weapon and Set upon Creation
+Max Upgrade: +15 (Upgradable Ingame)
+Avoid and HitRate Build
+400 Max Level
+Conversion System
+New Guild War Map 
+Gameguard Activated.
+Max Ups +15
+Admins and GRM Online [Everyday]
+24/7 Online
+ Regen Based.
+-----------------------------------------------------------------------------
+ AFK POINTS
+ Gametime to VP 
+ Gold to Votepoints
+ No Downtime  
+ No Bias 
+ NO TO FREE DONATE SERVER 
+-----------------------------------------------------------------------------
+ Ingame commands
+/pow (value)
+/dex (value)
+/int (value)
+/vit (value)
+/stm (value)
+Ex: /pow 100 
+-----------------------------------------------------------------------------
+✓Vote Points Item Available
+☑ Costumes with Additional Stats
+☑ Change Name Card</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://phoran.net/pho/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=76" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/24lr58x.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">6</span></span>
+							<span class="label label-success">IN <span class="badge">312</span></span>
+							<span class="label label-warning">OUT <span class="badge">32</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/76.html" >
+							Ran Online Havoc							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Havoc Server [ Official ]
+- Balance GamePlay
+- Midrate Server
+- 4 Class Server
+-Freebies 
++7 Weapons/Sets 7Days
+Amplified Sets Per Class +7 Perma Level 135
+TELE,SP,BP,Bus,PetCard, @ Pickupmoney 7Days
+20 Pcs MEGAPHONE!
+3Days Rosary For Leveling x5
+- x10 Experience
+- x5 Item Drop Rate
+- x5 Gold Drop Rate
+- Starting Level 130
+- 230 Max Level
+- No Reborn
+- Max Upgrade InGame +10
+- Skill Up to 167 - Next Update up to 237 skill
+- Quest System
+- New Items, DL Set, Celestial Set Astral Weapons
+- No Reborn System
+- HackShield Protection
+- No Bias Staff 
+- No Edited Character all Are Balance
+- Fair Gameplay!
+- Recoded Interface
+- Renewal Character Interface
+- Hunting System
+- PK Streak ( Dota )
+- Char Render , Vehicle &amp;amp Item Preview
+-Target Info Mobs , Npc &amp;amp Char
+- PartyWindow &amp;amp MiniParty &amp;amp Item Mixer
+- VotePoints / EP Points / Available
+- Gametime Afk Poiints 
+- (W)ar Coins Gain Points! to Buy Premium Item
+- PK,CW @ SW Moded Every day !
+- WellManage Server 
+- No Talkshit 
+- Item Mixer
+What are you waiting for ! Come And Join US!
+(www.ran-havoc.com)</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran-havoc.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=85" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/2yyqx50.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">7</span></span>
+							<span class="label label-success">IN <span class="badge">310</span></span>
+							<span class="label label-warning">OUT <span class="badge">30</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/85.html" >
+							<b>Theta Ran Online EP9 (Purong Bakbakan Server)</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>7Balanced Class!/Massive PvP GamePlay / Balanced GamePlay / Unique Server / Active Server /Excitement Overload!/No anti skill /No over power /Low Donation /Automated School Wars every 3hours/ minimum of 100php per donate , /Makikita mo rito ang tunay na gera sa mundo ng ran online!
+Purong Bakbakan talaga, Sali na!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.theta-ran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=92" id="ajax-link" class="profile"><img src="http://i60.tinypic.com/29o0hh3.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">8</span></span>
+							<span class="label label-success">IN <span class="badge">236</span></span>
+							<span class="label label-warning">OUT <span class="badge">404</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/92.html" >
+							BarkadaRAN Ep9 							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Do you want a new RAN PRIVATE SERVER that
+• Newly up server?
+• 24/7 Online Dedicated Server
+• No LAGS/DELAYS
+• Friendly and Active staffs
+• Free Donate Server
+• Reborn System
+• 50,000 Freebie Premium points
+• 10,000 Freebie War Points
+• Gain 5WP and 3PP (Premium points) per 10minutes
+• +10 Starting weapon for newbies
+• Easy leveling map
+• CW every Monday, Wednesday, Friday @ 8PM-9PM
+• CDM every Thursday @ 5PM
+• Balanced Gameplay
+• Ran PH skills
+• No ANTI SKILLS/DEBUFFS Effect
+• Combo-based server
+• Unlocked skills from level 7-217 and you will make your own combo 
+• huntable skill of 227-237 (giant hawk,lucian,reflector etc.)
+• No IMBA SKILLS/1hit skills
+• PK Streak
+• Potion Tray Lock
+• Right-click Function
+• Additional Set Info
+• Added Map: Barkada PK
+--------
+Let us ROCK here @ Barkada Ran Online
+--------</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://barkada-ranep9.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=95" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/34q6zpw.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">9</span></span>
+							<span class="label label-success">IN <span class="badge">142</span></span>
+							<span class="label label-warning">OUT <span class="badge">28</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/95.html" >
+							KeithRAN Classic Server							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Come and Join Us here in Keith Ran EP9
+Keith Ran  EP 6 Mix EP 9
+• Classic Gameplay
+• 4 Class Character
+• 7 - 167 Skill
+• Quest Enabled 
+• Low Gold Drop Rate
+• Mob and NPC Renewal
+• Medium Exp Rate
+• Medium Item Drop Rate• Club War Time 8-9PM (EVERYDAY!)
+• Right Click (Wear/Unwear Function)
+• Hunt Items in Bosses
+• Underground 
+• Saint Research and RCB1 fixing
+• Hunt your own Items
+• All drop items are randomly 1-19RV
+• Build Based Server
+• Max Upgrade +9 (You can upgrade in game)
+• Premium Items +10
+• Skills (You can buy scrolls in game)
+• X10 BTG 
+• Max Level: 210
+• No Reborn System 
+• No Bias Staff
+• Fair Gameplay
+• Well Manage Server
+
+Come Join US!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://keithran.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=96" id="ajax-link" class="profile"><img src="http://i65.tinypic.com/a5bazk.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">10</span></span>
+							<span class="label label-success">IN <span class="badge">138</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/96.html" >
+							Arkham Ran EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>24/7 Online No Donate Server EP7 5Class Free Perma +9 135 Set and Weapon Starting Level 135 Max Level 210..... Come and Join Us!!!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://arkhamranep7.servegame.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=49" id="ajax-link" class="profile"><img src="http://republicrangaming.com/Gamesama/33.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">11</span></span>
+							<span class="label label-success">IN <span class="badge">116</span></span>
+							<span class="label label-warning">OUT <span class="badge">17</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/49.html" >
+							RepublicRAN Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Republic RAN Games 4 Class Server 24/7 Online and New Boss With Drop Items Astral , Dark Lunars , Celestial , And more Balance Gameplay No Bias No Edited Characters Hunt Items Enabled, Quest Enabled, PK Killed Streak, School Wars, Every 3Hours , Club Wars Everyday New Bikes in game Laro na tayo mga Dre :))</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://republicrangaming.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=105" id="ajax-link" class="profile"><img src="http://i63.tinypic.com/t7ddhs.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">12</span></span>
+							<span class="label label-success">IN <span class="badge">92</span></span>
+							<span class="label label-warning">OUT <span class="badge">12</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/105.html" >
+							Densetsu Classic Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Hello, Here is the important features of the server! •NO DONATE 100 , •5 Class, •Hunt Items [Random Values], •Unique System, •1-167 Skills, •Item Mixer, •PK Streak, •AntiHackProtect, •Combo Based, •Pure Quest Server, •Professional Staff, •Legit Server [No Bullsh*t], •Weekly Updates, •Best Community, •Reliable &amp;amp Fast Live Support, •No Edited Items/Chars/ETC, •Daily Events. Wanna learn more? check our forums! Server Launched 2015 December 4th. You wont regret a thing if you join us ! God Bless.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ranclassic.densetsu-gaming.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=106" id="ajax-link" class="profile"><img src="http://s9.postimg.org/awmt3obv3/12189595_112709549092342_8009271565516619054_n.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">13</span></span>
+							<span class="label label-success">IN <span class="badge">62</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/106.html" >
+							ArkhamRAN EP7 4Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>ArkhamRAN EP7 4Class Classic|24/7 Online Dedicated Server|HackShield Protected|Anti-DDoS|High Exp Rate|Quest Based|Starting Level 1| Max Level 230|Max Upgrade Ingame +10|7-167 Skill|All Sphere Can Buy On Market NPC| Everyday CW| CDM Every M/W/F/Sun @5pm With Auto Reward|AFK Time to Vote Points(10hrs=10VotePoints)|Freebies +9 135 Set Perma and +9 Weapon Perma and A lot more....</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://arkhamranep7.no-ip.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=26" id="ajax-link" class="profile"><img src="http://i294.photobucket.com/albums/mm114/asayouasa/Untitled-3.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">14</span></span>
+							<span class="label label-success">IN <span class="badge">48</span></span>
+							<span class="label label-warning">OUT <span class="badge">28</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/26.html" >
+							<b>iSourire Ran Online</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>Welcome to iSourire Ran Online (Ran PH based Gameplay) Midrate Server, 5 class server (Gunner Upcoming) With School Wars system (Top 10 reward system for top 10 killers and School Buff for winning school) Great gameplay! We do have good play to offer! All items are huntables! No overpower characters! NonDonate vs Donate is very possible!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://i-sourire.com/en"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=107" id="ajax-link" class="profile"><img src="http://i64.tinypic.com/jtxems.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">15</span></span>
+							<span class="label label-success">IN <span class="badge">46</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/107.html" >
+							Ran Earth Online EP9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>RAN EARTH ONLINE EP9
+
+Earth Ran Features:
+
+√ First yes we have low donation.
+√ Max upgrade +20 [You can upgrade in game]
+√ High experience rate
+√ High item drop rate
+√ High gold drop rate
+√ 350 max level
+√ 150 max reborn
+√ Skill up to 237
+√ Open all skill 1-167
+√ 177-237 Skills
+√ Skills have special effects
+√ Gametime can convert to V-points
+√ We have V-Points items
+√ We have War token items / War token Npc
+√ We have Premium items / Premium shop Npc
+√ PK streak
+√ Char render, vehicle &amp;amp item Preview
+√ Target info mobs, npc &amp;amp character
+√ Party window &amp;amp mini party
+√ (W)ar tokens gain points!
+√ CW [TH-Eroom only, 8-9PM everyday]</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran-earth.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=117" id="ajax-link" class="profile"><img src="http://i63.tinypic.com/2vjwvoh.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">16</span></span>
+							<span class="label label-success">IN <span class="badge">37</span></span>
+							<span class="label label-warning">OUT <span class="badge">11</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/117.html" >
+							Genesis Ran Classic 6 Class EPISODE 9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>FEATURES:
+ *School Wars
+ *6ClasS
+ *PK Streak
+ *Hp Bar
+ *Target Info
+ *Offical Chat
+ *Right Click (Wear , Un-Wear)
+ *Character Name Background
+ *Ep7 Interface
+ *Old Map/Mobs
+ *Up to 237 Skills / Anti Skills Effects Only
+ *Open all Skills Upon Creation
+ *CLub Wars
+ *Leveling Map UNLI MOBS (Death Prison 3F) 
+ *Max lvl 250
+ *Hunt System (all boss)
+ *Old Set/Weapon (Ex. Crystal set 195) (Ex, Rit bow, Treasure Blade, Purple Wand)
+ *Balance Gaming
+ *Balanec Stats
+ *Balance Items
+ *Updated Classic Items
+ *Pots Base (Enable)
+ *BALANCE DAMAGE
+
+Register and Download NOW! at genesis-ran.com
+
+Official Site: genesis-ran.com
+Official Group: https://www.facebook.com/groups/405159376361646/
+Official Fan Page: https://www.facebook.com/RanGenesisOfficial/?ref=bookmarks
+Guild Pacakage Invitation: http://genesis-ran.com/#cmd/news/view/59
+
+
+</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://genesis-ran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=102" id="ajax-link" class="profile"><img src="http://i64.tinypic.com/2w5ty4k.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">17</span></span>
+							<span class="label label-success">IN <span class="badge">37</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/102.html" >
+							RanPinas							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Episode 8 Mixed 9
+7 Class
+350 Max Level
+50 Reborn</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ranpinas.xyz"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=115" id="ajax-link" class="profile"><img src="http://i68.tinypic.com/2w2g9p1.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">18</span></span>
+							<span class="label label-success">IN <span class="badge">34</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/115.html" >
+							HexaKill Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>You want the real fight , come and join us ! 
+All donate items can buy using Premium Points Only !
+</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.hexakillran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=103" id="ajax-link" class="profile"><img src="http://i68.tinypic.com/35bazy9.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">19</span></span>
+							<span class="label label-success">IN <span class="badge">27</span></span>
+							<span class="label label-warning">OUT <span class="badge">21</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/103.html" >
+							GodMode Ran Online EP7							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Welcome to GodMode Ran Online 
+Episode 7 Ver 2.2      [Sweetyran Version]
+
+ No Reborn/
+ 300 Max Level/
+ 30 stat per level/
+5 Unique Class/
+ Midrate Server/
++20 max upgrade Set and Weapon/
+Hunt your Own Set and Weapon/
+Non Donator vs Donator Possible/
+Balance Gameplay/
+No Lag/
+24/7 Online/
+/Active Admin and Staff
+</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://godmoderan2k15.cf/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=65" id="ajax-link" class="profile"><img src="http://xtendedran.com/votesite.gif" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">20</span></span>
+							<span class="label label-success">IN <span class="badge">22</span></span>
+							<span class="label label-warning">OUT <span class="badge">17</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/65.html" >
+							XtendedRan Online Episode 9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Welcome To XtendedRan Online Episode 9 !  NO DONATE ITEM , NO REBORN and BALANCE GAMING ..</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://xtendedran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=99" id="ajax-link" class="profile"><img src="http://i64.tinypic.com/4q32ft.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">21</span></span>
+							<span class="label label-success">IN <span class="badge">21</span></span>
+							<span class="label label-warning">OUT <span class="badge">16</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/99.html" >
+							Ran Earth Online EP9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>High Rate, 4 class, 350 max level and we have reborn, we have donations. For more info just pm at my facebook at Lucy Soriano or <a class="__cf_email__" href="http://www.gamesama.com/cdn-cgi/l/email-protection.html" data-cfemail="bfcdded191dadecdcbd7ffc6ded7d0d091dcd0d2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script> my fb email.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran-earth.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=101" id="ajax-link" class="profile"><img src="http://s21.postimg.org/3omewoy4n/ran.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">22</span></span>
+							<span class="label label-success">IN <span class="badge">12</span></span>
+							<span class="label label-warning">OUT <span class="badge">24</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/101.html" >
+							Anarchy Ran [Domination]							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Ep9 base dedicated private 4 class server. From the creator of  BWR , SWZ , FRO , RSO , ROSA etc, since 2012 . We, Thinksage Development Team wants to introduce our main and official server Anarchy Ran Online. If you are looking for a stable Ran private server come and Join us today! We ensure you a hunting and No reborn Based, Official 237 moded Level cap up to 195 Only , modified unique maps and Item drops , new item crafting 100 Balance Gameplay ! with the support of our Co-Team Development Team Zombie !</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://anarchy-ran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=119" id="ajax-link" class="profile"><img src="http://i68.tinypic.com/2du9h0h.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">23</span></span>
+							<span class="label label-success">IN <span class="badge">12</span></span>
+							<span class="label label-warning">OUT <span class="badge">2</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/119.html" >
+							Relic Ran Online 4 Class							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Relic Ran Online 4 Class / No Reborn / Max Level 210 / 7 - 207 Skill / All Items Hunt Ingame / No Premium Items / Pots Based Server / Online Points / Boss Hunt System / Balanced Gameplay / Team work needed / Come and Join Us!.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://relicranonline.tk/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=104" id="ajax-link" class="profile"><img src="http://i66.tinypic.com/zsvp8x.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">24</span></span>
+							<span class="label label-success">IN <span class="badge">7</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/104.html" >
+							Ubec Ran Ep9 6 Class							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Welcome to UbecRan Ep9 </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://www.ubecran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=21" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/2le4f35.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">25</span></span>
+							<span class="label label-success">IN <span class="badge">5</span></span>
+							<span class="label label-warning">OUT <span class="badge">28</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/21.html" >
+							<b>ReyanRan Online No Donate Server</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>No Donate Server All Item Is Huntable In Boss With Random Value !! HUNT AND VOTE SYSTEM !! Combo Base Server !! All class are usable and balanced !! Club Wars Every Sun,Tue,Fri,Sat [TH-Eroom Only] !! School Wars every 3 hours starting 1 am everyday 30 min Battle Time</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://reyan-ranonline.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=56" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/igdb88.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">26</span></span>
+							<span class="label label-success">IN <span class="badge">5</span></span>
+							<span class="label label-warning">OUT <span class="badge">20</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/56.html" >
+							OLD RAN							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>4 CLASS SERVER - PURE CLASSIC - 170 MAX LEVEL - 150 LAST SKILL - ROOT HOLE LAST MAP - BALANCE AND FAIR GAMEPLAY - JOIN US NOW!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://gamesama.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=84" id="ajax-link" class="profile"><img src="http://exia-ranonline.ga/RakEnRoll/img/logo.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">27</span></span>
+							<span class="label label-success">IN <span class="badge">4</span></span>
+							<span class="label label-warning">OUT <span class="badge">13</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/84.html" >
+							Exia Ran Online EP9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Episode 9 Server [7 Class Server]
+(y)(y) www.exia-ranonline.ga
+NEWLY UP SERVER (SEPTEMBER 15, 2015)
+✓7 Class [Extreme, Swordsman, Archer, Shaman, Brawler, Gunner, Assassin]
+✓Free Donate Complete Items (UNTIL SEPTERMBER 25, 2015)
+✓Free +11 Weapon and Set when you reach Level: 300
+✓ FREE +15 complete accessories when you reach Level: 300
+✔ Max Upgrade: +15
+✔Upgrade Rates: +13 (25) +14 (20) +15 (15)
+✓300 Max Level
+✓Reborn Added (50Max RB)
+✓Auto Reborn up to 5Reborn
+✓Conversion System
+✓Reborn to Warpoints (to buy Donate Items in market)
+✓200m Gold = 1000Warpoints
+✓New Guild War Map
+✓Gameguard Activated.
+✓Max Ups +15 (No Failed.) parang nag donate kna.
+✓Guild Wars Everyday at 5pm
+✓Admins and GRM Online [Everyday]
+✓24/7 Online, No Downtime
+-----------------------------------------------------------------------------
+In Game System:
+Card System:
+✓Vote Points Item Available
+☑ Scroll for 247 Skill (New)
+☑ Costumes with Additional Stats
+☑ Change Name Card</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://exia-ranonline.ga"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=116" id="ajax-link" class="profile"><img src="http://i1.wp.com/i64.tinypic.com/2w5ty4k.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">28</span></span>
+							<span class="label label-success">IN <span class="badge">4</span></span>
+							<span class="label label-warning">OUT <span class="badge">6</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/116.html" >
+							Liceans Ran (School Wars Edition)							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>-Episode 9 Server 
+-[6 Class Server] Updated Files and Client 6 Class [Gunner, Extreme, Swordsman, Archer, Shaman, Brawler] -School Wars Activated. (Every 4hours, x3 A day) 
+-Come and Join US!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://liceans-gamerz.sytes.net/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=109" id="ajax-link" class="profile"><img src="http://s10.postimg.org/ilu8yfai1/Sov_copy.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">29</span></span>
+							<span class="label label-success">IN <span class="badge">3</span></span>
+							<span class="label label-warning">OUT <span class="badge">3</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/109.html" >
+							KiD$ Ran Online Ep9 [ Be The Dopest Player ]							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>KiD$ Ran Online Ep9 [ Be The Dopest Player ]
+Newly Up Server Free to PLAY
+
+- 400 Cap Level
+- 6 Class Server
+- Hunt Based Server
+- Stats Build Server
+- Item Build Server
+- Max Refine can be
+Upgrade Ingame
+- Combo Based Server
+- SCHOOL WARS 3x/Day
+Starting 1pm &amp;ampampamp Every
+After 3 Hours
+- CLAN WARS 7pm
+Everyday (TH E-ROOM)</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://kidsran.servebeer.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=93" id="ajax-link" class="profile"><img src="http://i60.tinypic.com/r7rtsi.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">30</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">18</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/93.html" >
+							Earth Ran Online EP9 Reborn							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Earth Ran Online EP9 Reborn, we are 4 class and max level of 350 with 101 reborn!!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran-earth.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=25" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/2m67ehg.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">31</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">15</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/25.html" >
+							Epic Ran Online Episode 9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Free +10 Weapon
+Free +10 Set
+Huntable Rare Weapons, Set, Easy Upgrade. heart emoticon
+Active/Friendly Staff 24/7
+Max level is 300
+Stats per Level 12
+No Reborn System
+New Skills / Effects
+Balanced Items
+Balance / Lowrate Gameplay
+7th Class Server
+Combo Based Gaming
+Pots Based Gaming
+Character Render
+New Market Interface
+New Maps (Dungeon1, Dungeon2, and more)
+New Costumes / New Items
+Party Killing Base Server
+Party Leveling Base Server
+Items in VoteShop</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://epic-ranonline.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=52" id="ajax-link" class="profile"><img src="http://i937.photobucket.com/albums/ad213/fallen_morbid/b1.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">32</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">15</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/52.html" >
+							Illuminati Ran EP IX							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Newly up server! Come join us now, you wont regret it! smile emoticon
+
+WEBSITE : http://www.illuminatiran.com
+GROUP : https://www.facebook.com/groups/illuminatiran
+PAGE : https://www.facebook.com/illuminatiran
+=====================================
+Freebies(Starter Box):
+- Sable board vehile [15D] - with nitro
+- Siberian Husky pet [7D]
+- +10 Infinity Coat Set [16D]
+- +10 Sky Martial Helm [16D]
+- +10 Weapon (Pow/Int/Dex- you choose) [16D]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Server Features :
+- SW, CDM, CW, Auto Events Enabled (Earn VP and PP)
+- Combo based
+- Reborn (Max 150) 
+- Balanced Character Builds
+- 7 Classes 
+- Cool hunting system
+- +12 Max ups
+- Unlock 1-217 skills Upon Character Creation (287 Skills)
+- Duel Bet System
+- Boosting Maps
+- Friendly community
+- Many more!! smile emoticon COME SEE FOR YOURSELF</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://illuminatiran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=27" id="ajax-link" class="profile"><img src="http://i62.tinypic.com/255sua8.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">33</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">14</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/27.html" >
+							World-Wide RAN Online. EP6 5 CLASS SERVER (Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Unique features :
+*RAN PH V822 default setting rates with modification.
+*Daily Attendance with Daily Rewards! 
+*Low Exp Rate settings, Gold and Item Drops.
+*Enhance and Item Mix systems that will strengthen your characters!
+*Play Monster Wave! Attack and defend yourself from an endless wave of monsters!
+ 
+*Free Max Level Skill after creating character including free newbie starter items!
+ 
+*Cap Level 210, Balance Gaming  and No Bias, begging to GM, Staff or Admin are not allowed!
+ 
+*Max Upgrade is +10, but you can bypass it up to +15 using Enhance System.
+ 
+*Strategic Gameplay, QUEST TYPE GAMING and PARTY LEVELING!
+
+
+SERVER OPEN A WEEK AGO! </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://play.ww-ran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=83" id="ajax-link" class="profile"><img src="http://oi58.tinypic.com/11jsv3p.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">34</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">13</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/83.html" >
+							Atomix Ran Online EP2							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>24/7 Online - No Lag - Active Staffs - 4 Class -  Classic Old Interface - Starting Level 100 - Cap Level 150 - 127 Last Skill - Quest Based - Hunt Your Own Items - Free Weapon +7 [7D],Amplified Set +7 [7D] and Freebie Box Which Contain Skylock T-Rex +7 [15D],Obli E,Pet &amp;amp Many More - Super Balanced Classic Server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://atomix-ranonline.sytes.net"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=33" id="ajax-link" class="profile"><img src="http://empireran.com/img/banner/glen1.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">35</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/33.html" >
+							empireran							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>THE NEW REAL EMPIRE RAN ONLINE
+hunt all common items , rare items
+and PREMIUM items smile emoticon are HUNTABLES
+like :: premium set , premium weapon, premium
+accessories ..
+high refines like :: high burr and high protection potion
+max upgrade +18
+you can upgrade your item up to +18
+max level :: 350
+max RB :: 3 only</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://empireran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=59" id="ajax-link" class="profile"><img src="http://i1204.photobucket.com/albums/bb420/Chokie_Kulet/logo.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">36</span></span>
+							<span class="label label-success">IN <span class="badge">2</span></span>
+							<span class="label label-warning">OUT <span class="badge">4</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/59.html" >
+							Frost RAN Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Frost RAN Online (Classic Server)
+
+➡ Server Features ⬅
+• 4 Balanced Class (Extreme Disabled for now)
+• Max Level: 200
+• Max Skills: 167
+• Max Upgrade: +10
+• EXP Rate: (y)
+• Gold Rate: 󾮠
+• Item Rate: 󾮠
+
+➡ Server Updates ⬅
+• No Map Quests except for TH Map Quest
+• EXP Table reduced by 30 for easy leveling
+• Mob HP reduced by 50 for easy leveling
+• HeadB Maps with Fast Spawning Mobs
+• Back Pack Supports upto 25 lines</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://frost-ran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=51" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/qxkown.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">37</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">15</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/51.html" >
+							Emachine Ran Online EP9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Emachine Ran Online EP9 ( Night in the Darkness )
+GAME FEATURES:
+
+&amp;ampampgt EP 9 BASE PRIVATE SERVER
+&amp;ampampgt 24/7 SERVER ONLINE
+&amp;ampampgt 7 CLASSES AVAILABLE
+&amp;ampampgt STATS BUILD + ITEMS BUILD + SKILL COMBO BUILD BASE GAMING
+&amp;ampampgt CURRENT MAX LEVEL 250
+&amp;ampampgt SKILLS SET UP TO LEVEL 237
+&amp;ampampgt PREMIUM POINTS (PP) AND WAR POINTS (WP) USED TO
+PURCHASE PREMIUM ITEMS, UNLOCKED SKILLS AND COSTUMES.
+&amp;ampampgt LEVELING MAPS: DUNGEON 1, DUNGEON 2, DEATHPRISON 3F TO 9F
+&amp;ampampgt Items ARE HUNTABLE IN-GAME.
+&amp;ampampgt LOW DONATION RATE (PURELY FOR MAINTANING THE GAMES EXPENSES)
+&amp;ampampgt CW TIME IS 8PM TO 9PM Monday, Wednesday and Saturday
+&amp;ampampgt Weekly Events and Before CW we have event
+&amp;ampampgt ACTIVE STAFFS
+&amp;ampampgt GROWING COMMUNITY
+[UP COMING CHANGES/UPGRADE ON MAINTENANCE]
+- FIX SOME MINOR BUGS 
+- ADD NEW ITEMS IN GAME
+- POSSIBLY NEW MAP
+- POSSIBLY NEW MOB BOSSES
+- POSSIBLY NEW RELEASE WEAPONS AND SETS
+[ON GOING EVENTS]
+- GOLDEN E-ROOM 
+- LIKE, COMMENT, SHARE EVENT.
+</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://emachineran.sytes.net"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=94" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/v7b5gn.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">38</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">14</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/94.html" >
+							ZeroDegreeRAN							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>FREE to Play 24/7 Dedicated server,max upgrade to set and wep +9, active gm ingame ,free set +9 upon creation , classic ep7 gameplay level up to 210 ,staring level 120 . quest base server and hunt your own items. boss system and pk streaks with dota kill effects.. whats your waiting for!! come and join us!!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://zerodegreeran.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=53" id="ajax-link" class="profile"><img src="http://i62.tinypic.com/b7nn7p.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">39</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">13</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/53.html" >
+							<b>Victoryran Reboot</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>Hunt Your Own Items / Cap Level 227 / x10 Experience / x2 Item Drop Rate / x2 Gold Drop Rate / No Reborn System / +12 Max Refine Upgrade / up to 207 skill / No need Scroll to learn Skills / School Wars 4x a Day / Ep9 6 Class Server with Extreme Reboot</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://victoryran.net"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=58" id="ajax-link" class="profile"><img src="http://i.imgur.com/zkjkAlD.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">40</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">12</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/58.html" >
+							<b>V-RAN Online EP9-EPX (Since 2011)</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>ASSASIN/GUNNER CLASS SUPPORT - Donation Item Reward Attendance - Latest Assassin/Gunner Items - 100 Refining Upgrade to +15 - 7 to 257 Original Skill Original - Easy Rebirth and High EXP GOLD DROP Rate - DIRECT DOWNLOAD CLIENT - JOIN US NOW, WE OFFER CHEAP DONATION</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://ventureran.net"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=86" id="ajax-link" class="profile"><img src="http://imageshack.com/a/img661/1215/kB7TJW.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">41</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">12</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/86.html" >
+							Oblivion Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Oblivion Ran Online is a High-Rate Server. Launched in September 22, 2015. </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://oblivionran.com:8080"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=89" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/2q8axqd.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">42</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/89.html" >
+							THANTANOS RAN CLASSIC ONLINE EP7 							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Thantanos Ran Classic Server ep7. 
+Low rate server..200-2008 
+185 max lvl / 147 max skill / 4 class Server / 25x exp (5x Btg)
+quest mode / 100 Balanced  and NO ARCHER GAMING COMBOS 
+lots of freebies (PERMANENT 155 +7 15RV SET)
+-ADVANTAGE NYO NG MAUNA SA SERVER..</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://thantanos.com/en"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=98" id="ajax-link" class="profile"><img src="http://i64.tinypic.com/2u8e82o.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">43</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">6</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/98.html" >
+							Oblivion Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Mid-Rate Server
+95 No Donation
+5 Donation (to support server and its maintenance)
+OBLIVION RAN ONLINE :
+&amp;gtFREE 165K PP POINTS.....every char create..
+&amp;gtMAX RB CAN GET FREE PP POINTS...TO BUY ALL FD ITEMS IN 2ND MARKET 
+&amp;gt how to claim your free pp points??
+&amp;gtYOU MUST REACH THE MAX CAP..THEN POST YOUR CHAR. IN OUR GROUP.. ONLY TOP 30 PLAYERS CAN GET FREE FD,,,(NO DUMMY)
+&amp;gt7 Class
+&amp;gt237 skill
+&amp;gtDedicated Server!
+&amp;gtUnique Game System.
+&amp;gtBalance Game Play.
+&amp;gtCombo Base Server
+&amp;gtUnlocked All Skills
+&amp;gtMax Reborn = 50
+&amp;gtMax Level = 300
+&amp;gtNo ANTI SKILL/DE-BUFF SKILL Effects/Functions
+&amp;gtNo 1 Hit Skill
+&amp;gtPK Win/Loss Record and Streak
+&amp;gtPK Rank Name With Logo
+&amp;gtRight Click Function
+&amp;gtAdd Stats In-game
+&amp;gtPremium/War Points NPC can be seen on New Market Place
+&amp;gtGain Premium/War Points when you are online (Yes, free points where you are online doing leveling, hunting of bosses, AFK, etc..)
+&amp;gtMax Refine (Using high burr/protection potion) = +15
+&amp;gtVote Points Convert to Premium Points &amp;amp War Points
+&amp;gtGold Convert to Vote Points
+&amp;gtSell Function for Premium Items
+&amp;gtSets with bonus stats
+&amp;gtCostumes with stats
+&amp;gtActive and Friendly Staffs
+&amp;gtMany More!
+Come and Join US!!
+OBLIVION Rules
+1.Respect Moderators and Game Masters
+2.No Posting/Comment of Unnecessary Pictures
+3.No Posting of Other Ran Servers
+4.ALWAYS RESPECT STAFFS TO AVOID BEING BAN.
+5. No Selling Account .
+6. Dropped items/Looted by others are players responsibilities not by GMs</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://oblivionran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=120" id="ajax-link" class="profile"><img src="http://i68.tinypic.com/2mq4uo4.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">44</span></span>
+							<span class="label label-success">IN <span class="badge">1</span></span>
+							<span class="label label-warning">OUT <span class="badge">0</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/120.html" >
+							Katama Ran Ep9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>==================================
+SERVER FEATURES
+► Episode 9 
+► 8 Classes - Includes Magician Class 
+► High Rate Server 
+► 300 Max Lvl 150 Max Reborn 
+► Combo Based Server (Teamplay-based) 
+► Official-based Skills
+► Official-based Items
+► Extreme Class Reboot/Renewal 
+► Unlock Skill Upon Creation (up to 207) 
+► Dual Weapon Tab for all classes 
+► Item Compound Official Based 
+► Hunting Based System 
+► Easy Reborn Stages (Beginner Friendly) 
+► Official-based User Interface 
+WARS
+► School Wars (PVP Mode) 
+► School Wars (Tyranny Mode) 
+► PK Wars (Party v Party War System) 
+► Club Wars 
+GAME FUNCTIONS
+► Item Link System 
+► Right Click Equip/Unequip 
+► Character View Equipment (Anti-Bias) 
+===================================</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://www.katama-ran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=28" id="ajax-link" class="profile"><img src="http://i929.photobucket.com/albums/ad136/romeocute24/aw-2.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">45</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">33</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/28.html" >
+							SOP Ran CLassic 5 CLass							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small> SOP Ran Online - Classic 5
+@ No Reborn
+@ Level Max: 230
+@ Vote Points &amp;ampampamp SOP-Points System on website
+@ Hauntable Items in game
+@ Balanced Damage
+@ no need to donate just AFK and vote to our website
+@ No Imba / 1 Hit skills
+@ New Source Functions like Easy Wear / Un-Wear Function
+@ Gametime to Vpoints
+@ Dont have money to donate======&amp;ampampgt&amp;ampampgt&amp;ampampgt&amp;ampampgt&amp;ampampgt&amp;ampampgtjust AFK and vote to our website
+@ Free 1000 SOP points /POst ScreenSHot your Character/Username in our FB pages...
+@ 2months Old..
+@ For more info, Play SOP Ran Online!
+@ Free-To-Play Server!
+@ Website: www.sop-ranonline.com
+@ Fan Page: https://www.facebook.com/sopranonlinee
+@ Group: https://www.facebook.com/groups/1638370799724547/
+@ fb.com/romeojrt for assistance
+@ Short Description:
+@www.sop-ranoline.com PLAY SOP RAN Online. Free-To-Play Server. 24/7 Online, No Down Time. Balance Game Play. No Reborn. Epoints Vpoints System.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.sop-ranonline.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=32" id="ajax-link" class="profile"><img src="http://blazedl.com/trash/banner1.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">46</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">22</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/32.html" >
+							<b>InteL Battle Royal</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>Unique Game Play - Fast Leveling - High Exp Rate Server - Fully modified Skills - Up to 287 Skills - Based on PhoenixRAN year 2007 - No Gunner, Extreme &amp;amp Assassin - Quality Game Play</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.intelbr.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=77" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/t7zzib.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">47</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">21</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/77.html" >
+							Divinity Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Divinity Ran Online Classic 
+====================================================
+5 Class Only (Archer,Brawler,Shamman,Swordsman &amp;ampamp Extreme)
+Old School Gameplay
+100 Balance game play
+220 Level Cap
+No Reborn
+Quest Based Gameplay
+Classic Levelling Map
+UnliMobs (RH, T3p, Cube, HB90F)
+Hunt your own item
+Item mix system (Ingredients for Rare Item)
+Max Stats Extreme (880)
+Max Stats Normal (660)
+x10 Exp rate
+x10 BTG
+x10 Item Drop rate
+7 to 167 Skill only
+Spiritual Sphere provided in inventory
+1-16 Spiritual Sphere available in MarketPlace
+Gametime to Epoints
+Voting System
+Max ups for Armor and Weapon +10
+24/7 Online
+650mb Installer 
+CDM/Suryun/CW/PvP</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.divinityranonline.link"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=60" id="ajax-link" class="profile"><img src="http://oi57.tinypic.com/30csrix.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">48</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">19</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/60.html" >
+							Aciles Ran Online 							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>✔ 7 to 287 Skills
+✔ Free +15 Weapon And +15 Set
+✔ Unique/Balance Game Play
+✔ Unlocked All Skill New Creation! Process For Now Until 7/17/15
+✔ Regen Base
+✔ Max Lvl 300
+✔ Max Stats 15.900
+✔ New UI Interface
+✔ Char Render
+✔ Item Preview
+✔ Build Base Server
+✔ RightClick Function
+✔ PK Streak
+✔ Add Stats InGame Command
+✔ Party Display
+✔ 100 Fair Play
+✔ 95 No Donation Server Only UPS But You Can Get For AFK/VOTE
+✔ Gametime to V-points
+✔ Hunt Your Own Costume </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://acilesran.site.nfoservers.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=63" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/1586seo.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">49</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">17</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/63.html" >
+							X-Gen Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>WELCOME TO X-GEN RAN ONLINE
+
+X-Gen Ran online Features
+* MAX LEVEL IS 300
+* STARTING LEVEL IS 1
+* MID RATE EXP
+* LOW RATE GOLD for GOLD CYCLE in ITEM SELLING Purposes
+* CLASSIC GAMEPLAY
+* EP9 INTERFACE
+* REGEN BASED
+* NO POTS ( HP POTIONS)
+* NO REBORN
+* COMBO TYPE
+* NO POTS SERVER
+* ALL ITEMS IS HUNTABLE
+* LOW DONATION SERVER
+* 10 STATS PER LEVEL
+* NO REBORN
+* SERVER IS 24/7 ONLINE (unless Patch Updates)
+* 5 CLASS SERVER
+* CW IS 6 DAYS ( Monday to Saturday at 8pm)
+* CLUB DEATHMATCH is EVERY SUNDAY at 8pm
+* SCHEDULED Game Masters Events
+* Active Admin / Staffs for Players concern
+* AFK = WARPOINTS in Game
+* GAMETIME TO VOTEPOINTS on Site
+* UPDATED EP9 ARMORS, WEAPONS and Accesories Are Dropped by Mobs
+* RANDOM VALUE TO ALL ITEMS
+* we Dont Know Yet What is to be a Donation Item
+-cause its Huntable Already
+on Creation:
+* DRAGON CLAW SET
+* BLACK DRAGON WEAPONS
+* WHITE COLORED WING w/ Stats
+* HEAD BANNER w/ 4000 HP
+* ACCEs
+* PET w/ Pet Skill
+* BASIC CARDS
+* GHOST BIKE
+* 50,000 Premium Points
+
+Hot Features: 
+=GameTime to Votepoints.
+*AFK in Game? convert your Gametime to Votepoints to Buy Cool Items On Website
+=Warpoints to Item.
+**AFK in Game ? Warpoints is Enabled here to Buy Cool Items on NPCs at Game.
+=Clubwar is 6x a Week
+=CDM is Once a Week with cool rewards
+**Full Pack Action is Here ...
+**Active Admin and Gms
+**Come And Join to our Growing Community.
+**Your Time to Download this Game is not a Waste.
+Website :
+Website : http://x-gen.ranworld.xyz/
+Facebook Page : https://www.facebook.com/groups/1630580777197850/?ref=bookmarks</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://x-gen.ranworld.xyz/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=29" id="ajax-link" class="profile"><img src="http://rantop100.gotop100.com/lists/rantop100/custombanners/u131.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">50</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">16</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/29.html" >
+							Classical Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Original gameplay of Ran Online since its first release in 2004</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.classical-ranonline.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=71" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/34p0rbm.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">51</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">14</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/71.html" >
+							PLATIMONG RAN ONLINE							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>PLATIMONG RAN ONLINE
+
+Server Features
+➡Newly Opened Server 8/21/2015
+➡5 Class Only
+➡Classic Exp Leveling
+➡All items are huntable with random value
+➡Balanced Low Rate Server
+➡Cap Level 230 (Extreme: 210)
+➡Everyday CW 1 E-Room Open
+➡Item Mixing Activated
+➡All skill unlocked for Normal Classes
+➡Locked skills on extreme class for hunting purposes
+➡Hustle free add stats in game (ex. /pow 100)
+➡Right click Wear/Unwear Function
+➡4x a day suryun event
+➡Latest Armor MoonStone Set
+
+Freebies
+🔶GT Weapons [3D]
+🔶x15 Exp Rate Rosary 2Pcs ( 1 inside your bank )
+🔶MoonStone Coat Random Box
+🔶MoonStone Pants Random Box
+🔶MoonStone Gloves Random Box
+🔶MoonStone Shoes Random Box
+
+Facebook Page
+🔶https://goo.gl/zygY5m
+
+Website
+🔶Homepage: http://goo.gl/hg3Mhj
+🔶Download Page: http://goo.gl/OwUUOh</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://platimong.tk"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=34" id="ajax-link" class="profile"><img src="http://s18.postimg.org/4mh9hlgqx/915_DDM_Banner.gif" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">52</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">13</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/34.html" >
+							<b>915 - DDM [SchoolWarCTF]</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>Magician Assasssin Class / SchoolWar [Computer][PK] / New POWERPLANT MAP / MaxUpgrade Plus 16 / 1 to 11 no Vanish / 237 Skill All Free / Active GM Events / Support / 2 Ch / 24/7 Online / LastManStanding / All items are drop by mobs / BalanceGamePlay / Almost no gap Donator vs NonDonator / EP9 Srv /</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.915ran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=66" id="ajax-link" class="profile"><img src="http://i.imgur.com/77DH4oC.jpg?1" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">53</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">13</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/66.html" >
+							Mint Ran Online - Classic Server							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>EP2 Low Rate Server - 4 Class Server - Max Level 135 - No Reborn - Skills up to 127 - All items are huntable ingame - Quest Type Server - Party leveling - No Overpowered Class and Items. - No Donate items.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.mint-ran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=38" id="ajax-link" class="profile"><img src="http://i62.tinypic.com/21o3d07.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">54</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">12</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/38.html" >
+							Ultimate Ran							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Be a normal :) </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://ultimateran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=62" id="ajax-link" class="profile"><img src="http://banners.graveyardran.com/advertisement/gyranbanner.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">55</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">12</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/62.html" >
+							<b>GraveyardRan by GNetworks - HOT</b>							</a>
+							<span class="verified">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>							</h4>
+							<div class="well well-sm"><p>
+							<small>:: 7 Years of Gaming :: Reliable Server :: Custom Gaming Community :: Server Updates Based on Needs of Gamers :: Forum/Chat Suppport :: Experienced Ran Masters and Administrators :: Exciting Club Wars and Club DeathMatch :: FREE Skills :: FREE Premium Set/Weapons for Starter ::</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.graveyardran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=20" id="ajax-link" class="profile"><img src="http://i.imgur.com/GNS82W0.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">56</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">11</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/20.html" >
+							Xen Ran online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Based Build Server
+Average refine rate
+Starting level 135
+Max level 185
+Max Refine +9
+Free Skills
+7 to 167 Skills</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://xengaming.ga"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=30" id="ajax-link" class="profile"><img src="http://i60.tinypic.com/2drgcd1.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">57</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">11</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/30.html" >
+							Helium Ran Classic EP9 4 cLASS							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Helium Ran EP9 4 CLASS Classic
+FREE Semi Full Donate
+DARK LUNAR SET
+DARK LUNAR WEAPON
+Free 1500 Warpoints 
+All Cap Level 
+Free to ups UP TO +9 Set and Weapon
+Chat the Live Support in Site To Claim 
+Your Freebies 
+-------------------------------
+-Balance items
+-NO REBORN
+-240 MAX LEVEL
+-Balance Character Skill
+-Balance all 4 class character
+-Low Cost of donation of war points
+-Gametime to warpoints
+-Right Click Function
+-Everday CW 
+-cdm activated
+-Huntable New set and weapon
+-Max Ups is +10
+Website
+http://heliumgaming.ml/
+Groups
+https://www.facebook.com/groups/1439769246329133/</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://heliumgaming.ml"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=41" id="ajax-link" class="profile"><img src="http://ran4life-online.servegame.com/patch/banner.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">58</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">11</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/41.html" >
+							Ran4Life Online EP9 (High rate)							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Ep9 High rate server balance gaming 24/7 online. Fast-paced action gameplay. Free +50 full donate upon creation.  Join us now!!!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran4life-online.servegame.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=47" id="ajax-link" class="profile"><img src="http://i.imgur.com/FYKZmgf.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">59</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">11</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/47.html" >
+							Trinity RAN - R E B O R N							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Unique Features Like Costume Coloring, Weapon Coloring, Re-Mastered Club Wars, Crafting System, Max Level Aura For The Normal Classes and Different Aura for Extreme Reboot Class High Rate Regen Based, No Overpowered Skills and Class, Skills Are all free at creation.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://goo.gl/mpasB5"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=40" id="ajax-link" class="profile"><img src="http://www.arena-top100.com/banners/vladimir.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">60</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/40.html" >
+							Vladimir Ran Online EP7							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Vladimir Ran Online is a Classic Server that have 5 character class only. The exp and gold rate are low and also the server is updated. such as right click function,pk streak system ETC. So Come and Join US! Register and Download now!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://vladimirran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=44" id="ajax-link" class="profile"><img src="http://151.80.133.160/themes/images/main_bg.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">61</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/44.html" >
+							42O LEGACY							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>FREE MAX RB + MAX ITEMS ! NO DONATE COMBO BASED SERVER</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.420legacy-ran.tk"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=61" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/2ir3ptt.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">62</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/61.html" >
+							Ancient Ran Online 5class							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>[ Newly Open Server! 5/12/2015 ] 5class Server . Boss Hunting , Hunting Items , Balance Stats, Balance Items, Balance skills , Classic Server , Unlock All Skill 7-167, ep5-ep7 Interface , No Reborn, Max lvl 200,Cool Freebies! ,GameGuard Protection, Tara Balikan Natin Ang Tamis ng Nakaraan! Tara Laro na!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ancientranonline.tk"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=64" id="ajax-link" class="profile"><img src="http://i60.tinypic.com/1057cxe.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">63</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/64.html" >
+							Retaliation Reborn							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Come and join New server base on DcRan II client very unique no old maps.Come and Join us be one of us </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://retaliation-reborn.ml"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=78" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/fegev9.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">64</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/78.html" >
+							Razor-RanOnline Philippine Server Episode 9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Razor-RanOnline Server : is Inviting you to try our newly up server
+
+NEWLY UP September 1,2015
+
+Server Features
+
+- A Semi Official Gameplay
+- 7 to 237 &amp;ampampampampampampampampampampamp 287 skill on selected characters
+- 200 Max Level and soon the level will be Raise
+- 7 Class
+- Low Drop Rate
+- Character Render
+- Semi Official Party Interface
+- Right Click Function
+- Bike/Hover Render
+- Quest Based Server
+- Regen Based Server
+- Pull/Push Skill
+- Mana Drain Skills
+- DeBuff
+- and Many more...
+
+So what are you waiting for???
+
+
+Come &amp;ampampampampampampampampampampamp Play
+
+
+Be part of our Community
+
+
+Here are the links that you need...
+
+
+Facebook Page : https://www.facebook.com/pages/Razor-Philippines/685859671545873?fref=ts
+
+Facebook Group: https://www.facebook.com/groups/1604746506458224/
+
+Server Website: http://razor-philippines.com/cp/
+
+Download Link :: http://razor-philippines.com/cp/download.php (Just Choose)</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://https://www.facebook.com/RazorRanOnlinePinas"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=79" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/axz9qx.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">65</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">10</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/79.html" >
+							MyRan Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small> Balanced gaming,  Free +50 Set + Weapon Dropable./Huntable..Max Lv. 350 Max Reborn 100, No OVERPOWER, PK Streak (Kills,Death), All items are huntable,Party leveling,Lag Free, 24/7 Active Server,Voting System, Club Wars Everyday 8pm-9pm )
+</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://myranonline.zapto.org/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=36" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/2u8z5eh.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">66</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/36.html" >
+							Pride RAN Online (Old School Gameplay)							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Old School Ran like 5-Class Only Brawler,Archer,Swordsman,Shamman &amp;ampampamp Extreme. No Reborn, No Imba Skills, No Imba weapon/armor Hunt your own item, Quest System. Map quest and level required enabled.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://prideran.com/index.php"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=37" id="ajax-link" class="profile"><img src="http://oi60.tinypic.com/iymq0j.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">67</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/37.html" >
+							Ran Revolution							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Fast growing community, Friendly GM and Admin.. come and play. Properly configured server with high speed server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">8 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ran-revolution.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=50" id="ajax-link" class="profile"><img src="http://www.pixentral.com/hosted/1sx4vQ0tb7UGzAKGgAapLu10VuPEC_thumb.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">68</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/50.html" >
+							Back Ran Online II							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Server Features:  Balance Game Play - Low PC Requirements (No Lag) 
+• Max Level 210
+• 5 Class
+• Classic Server
+• 24/7 NO DOWN
+• Pet System Enable
+•  +10 Refining enable
+• Skills 7 up to 167(new skills in new patch soon)
+• Medium rate Exp/Gold/Drop with everyday BTG event</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://backran-world2.tk"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=72" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/671oie.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">69</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/72.html" >
+							Forbidden Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>[Ran Online CLASSIC GamePlay]
+→5 Class Only.
+→Episode 7
+→Old School Game-play
+→100 Balance game play
+→200 Level CAP - Extreme 185
+→Quest Based Game-play.
+→Archer,Brawler,Shaman,Swordsman &amp;amp Extreme.
+→Free Amplified Set [+9] by reaching Lvl.135
+→Classic Leveling Map
+→Hunt your own items
+→Normal Stats
+→X10 Exp rate (on Weekends)
+→X10 BTG (on Weekends)
+→X8 Item/Gold Drop rate (on Weekends)
+→NO-REBORN.
+→NO imba items.
+→NO imba Armors/Set.
+→NO imba Skills.
+→7 to 167 Skill only.
+→Game Time Vpoints.
+→VOTING SYSTEM (VPOINTS)
+→ 24/7 Online</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://forbiden.ranaticz.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=97" id="ajax-link" class="profile"><img src="http://i63.tinypic.com/2ijn7mc.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">70</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">9</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/97.html" >
+							WorldWide RAN Ep9 CLASSIC 							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>• MAX LEVEL 210
+
+• SKILL 167
+
+• NO REBORN
+
+• CW EVERYDAY
+
+• CLASSIC GAMING/EP9 INTERFACE/STABLE SERVER
+
+• DEDICATED SERVER
+
+• HUNT YOUR OWN ITEM
+
+• QUEST BASED SERVER
+
+• OLD RAN PH STYLE 2006
+
+• 4 CLASS SERVER
+
+• FREE +9 SET AND WEAPON UPON CREATION
+
+• MAX REFINES +9 NONDONOR
+
+• MAX REFINES +10 DONOR
+
+• EXP SCALE 15.0
+
+• BTG EVENTS WEEKLY
+
+• MONEY DROP SCALE5.0
+
+• ITEM DROP SCALE3.5
+
+• ITEM DROP LOWERSCALE 3.4
+
+For more info kindly like our page and our group.
+
+Page : https://www.facebook.com/WWRanOnline/?fref=ts
+
+Group : https://www.facebook.com/groups/1434592193535175/</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://play.ww-ran.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=31" id="ajax-link" class="profile"><img src="http://www.exciterranonline.com/admin/bilog.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">71</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/31.html" >
+							Exciter Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>7Class Server - Balanced All Class - Mid Rate EXP - REBORN and Grand Reborn - Combo Based Server (Freeze State) - Max Level 240 - Hunt your Items -  Upgrade your Resistance - MWF Club Wars - 24/7 Online </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://exciterranonline.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=67" id="ajax-link" class="profile"><img src="http://www.4shared.com/download/JHxW9bljba/baby_senpai.gif?lgfp=3000" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">72</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/67.html" >
+							Baby Senpai Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>• Crafting System
+• BabyRANs Lev System Mid Rate Regen Based
+• Unique Features Like Costume Coloring
+• Weapon Coloring, Re-Mastered Club Wars
+• No Overpowered Skills and Class
+• Skills Are all free at creation.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ranonline.ph"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=74" id="ajax-link" class="profile"><img src="http://i59.tinypic.com/16jghs2.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">73</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/74.html" >
+							JxRan Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Newly Up Server!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://jxran.cdnetwork.xyz/downloads.php"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=88" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/2hdmrug.png" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">74</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">8</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/88.html" >
+							Astral Core XX							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Ran Ep9 Balanced Server with a Thrilling Gameplay AstralCoreXX Ep9 Features 
+• Website : astralcorexx.com 
+• maxx Level 300 
+• maxx Reborn 250
+• Gold and Vote Points Based System 
+• Balanced Server 
+• Dedicated Server 
+• Friendly Staffs 
+• No Lags and Delay (Depends on your Network) 
+• Full Freebies 
+• Great Event Rewards 
+• No edited Player 
+• Too many to Mention Just Play and Welcome to our Game Hope you Enjoy</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://astralcorexx.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=35" id="ajax-link" class="profile"><img src="http://i57.tinypic.com/sgh9c6.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">75</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/35.html" >
+							Ran Fury Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>5class Server . Boss Hunting , Hunting Items , Balance Stats, Balance Items, Balance skills , Classic Server , Unlock All Skill 7-167, ep5-ep7 Interface , No Reborn, Max lvl 200,Cool Freebies! ,GameGuard Protection, Tara Balikan Natin Ang Tamis ng Nakaraan! Tara Laro na!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ranfury-online.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=39" id="ajax-link" class="profile"><img src="http://i62.tinypic.com/vh9cfr.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">76</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/39.html" >
+							Serenity Ran v2							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Classic : 4Class Server Status : Stable 24/7 No Down Time Cw : Every Day Golden Eroom Prize FD Conquerors Path Start July 20, 2015 / 15 Days Battle Guild grin emoticon No REBORN No Bias Huntable Skill Or Buy @ itemshop / or quest Lag Free Max Level 210 Balance Gaming No Imba grin emoticon Damage Skill Active : SR v2 Team Pet System to Avoid nondrop item grin emoticon...</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://ranfever.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=54" id="ajax-link" class="profile"><img src="http://airan-online.com/rrr.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">77</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/54.html" >
+							Classic Ai-Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Classic Server - - Hunting System - - Starting Level 101 - - Max Level 135 - - BTG On - - Balance Gameplay - - No Over Power Skills - - Maintained Server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://airan-online.com/AR"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=69" id="ajax-link" class="profile"><img src="http://ran-ely.com/themes/images/banner/1_1439571770.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">78</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/69.html" >
+							RanEly							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>101 no donate server. Hunt your own item.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://ran-ely.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=70" id="ajax-link" class="profile"><img src="http://ran-ely.com/themes/images/items/621_61_1439656325.gif" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">79</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/70.html" >
+							RanEly							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>101 no donate server. Hunt your own item.</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://ran-ely.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=75" id="ajax-link" class="profile"><img src="http://jd-networx.com/image/b5.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">80</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/75.html" >
+							i-bugzran reboot							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>+10 Item Freebies Permanent•6Class•Max 207 Skills Free Learn•Max 227Lvl•Semi Item-Compound•Semi School Wars•Unli Mobs•Pots Based•Ep9 Interface•3Days Challenge</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">6 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://jd-networx.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=80" id="ajax-link" class="profile"><img src="http://i59.tinypic.com/rh0k7l.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">81</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">7</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/80.html" >
+							Explicit Ran ( COMBO BASED )							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Explicit Ran EP9 Balanced Server, Thrill Gaming • Website : http://cannabis.explicitranonline.com/ Max Reborn 100 • Gold and Vote Points Based System • Balanced Server • Dedicated Server • Friendly Staffs • No Lags and Delay • Full Freebies • Great Event Rewards • No edited Player • Launch date ( SEPTEMBER 25 2015 )</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">7 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://cannabis.explicitranonline.com/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=55" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/2wftz6e.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">82</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">6</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/55.html" >
+							RS Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>RS Classic will offer you the old gameplay of ran online. But since this is RS Classic. Expect Fast leveling. Mid rate gold. Max level 210. Starting level 120. No reborn. Skills up to 177. 4 class server. Last WEAPONS, ARMORS and ACCESSORIES get hunt from Suryun event and Bosses. Auto Suryun Event ( 3 times a DAY ). Active Staff / Friendly Staff. Pure balance. Club War. Guild Wars. Voting System. Weekly Events. Come ang joins US!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://ranstig.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=68" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/20hk6qc.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">83</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">6</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/68.html" >
+							Magic Ran Online EP9							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>WELCOME TO MAGICRAN ONLINE EP9
+- RE-OPEN SERVER
+- FRIENDLY STAFF
+- 4 CLASS SERVER
+- ANTIPOTS SKILL ALL CLASS (iwas cheater)
+- 100 BALANCE GAMEPLAY
+- 260 LEVEL CAP
+- EASY LEVELING
+- QUEST SYSTEM
+- SKILLS LIKE OFFICIAL WITH EFFECTS
+- SCHOOL WARS / CLUB WAR / SURYUN EVERYDAY
+- FRIENDLY STAFF
+- LOW COST DONATION
+- 24/7 ONLINE
+COME AND JOIN US !!</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://classic-magicranonline.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=57" id="ajax-link" class="profile"><img src="http://i61.tinypic.com/29lhjbb.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">84</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">5</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/57.html" >
+							Devotion Ran Online EP9 4 Class Edition							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>24/7 online dedicated server , Cheap donations, 500x EXP ,50x Gold rate , 250x item drop rates ,Free EP6-7 weapons Drop by mobs, NEW maps, New Bosses, New Pets, hover boards, New Weapons, BTG, BigBike NO REBORN, MAX LVL 240</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 9</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://devotionran.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=82" id="ajax-link" class="profile"><img src="http://i62.tinypic.com/30msrph.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">85</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">4</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/82.html" >
+							Dominant RAN PH							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Palipat lipat ka nalang ba Ran? Tara mag laro kana.
+~DominantRAN PH~
+4 Class Server • No Reborn • 230 max level • Official &amp;amp No Edited skills • No Over Power Class 
+• No Over Power Damage • Huntable items in Game • Upgradable using refines • PK Streak 
+• Episode 9 Interface • Right Click Function Wear/Unwear • Balance &amp;amp Strategic Gameplay 
+• Equal items for all • Craft System • Random Events And A lot more....
+Lets Rock &amp;amp Roll… Join Now! </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://dominant.ran-online.xyz/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=110" id="ajax-link" class="profile"><img src="http://s16.postimg.org/4wdcw2amd/banner11.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">86</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">4</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/110.html" >
+							ReminisceRAN EP2 Classic Server							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Play Now and Enjoy The Past Of Ran Online
+Starting Level 100 Max Level 160 Free +9 Set and +9 Weapon Max Rv Cap Reward</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 3</span>
+							<span class="label label-primary">Lowrate</span>							<span class="label label-warning">4 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://reminisce-ran.no-ip.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=114" id="ajax-link" class="profile"><img src="http://i.imgur.com/hPG9QV4.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">87</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">4</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/114.html" >
+							FreedomRan EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Free 2 play Server </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://freedomran.no-ip.info/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=81" id="ajax-link" class="profile"><img src="http://i58.tinypic.com/ou0dhe.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">88</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">3</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/81.html" >
+							Rise OF Ancient Ran Online							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Updated soon</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://RoarEP7.com"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=111" id="ajax-link" class="profile"><img src="http://i.imgur.com/hPG9QV4.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">89</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">2</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/111.html" >
+							FreedomRan EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>FreedomRan EP7 5Class Classic Free 2 play server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://freedomran.no-ip.info/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=112" id="ajax-link" class="profile"><img src="http://i.imgur.com/hPG9QV4.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">90</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">2</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/112.html" >
+							FreedomRan EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>FreedomRan EP7 5Class Classic Free 2 play server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://freedomran.no-ip.info/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=118" id="ajax-link" class="profile"><img src="http://i.imgur.com/PFPwE4e.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">91</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">2</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/118.html" >
+							Freedomran EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Free 2 play server</small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-success">Highrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://freedomran.no-ip.info"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+									<div class="col-md-12">
+					
+					<div class="thumbnail ">
+												<!-- <a href="profile.php?in=113" id="ajax-link" class="profile"><img src="http://i.imgur.com/hPG9QV4.jpg" border=0 id="ajax-link" width="468" height="60"></a>-->
+						<div class="caption-full">
+							<h5 class="pull-right">
+							<span class="label label-info">TOP <span class="badge">92</span></span>
+							<span class="label label-success">IN <span class="badge">0</span></span>
+							<span class="label label-warning">OUT <span class="badge">1</span></span></h5>
+							<h4>
+							<a href="http://www.gamesama.com/profile/113.html" >
+							FreedomRan EP7 5Class Classic							</a>
+														</h4>
+							<div class="well well-sm"><p>
+							<small>Free 2 play Server </small>
+							</p></div>
+						</div>
+						
+						<div class="ratings">
+							<p class="pull-right">
+							
+							<span class="label label-default">Episode 7</span>
+							<span class="label label-info">Midrate</span>							<span class="label label-warning">5 Class</span>
+							
+							</p>
+							<p>
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http://http://freedomran.no-ip.info/"scrolling="no" frameborder="0" style="border:none;height:25px"></iframe>
+							</p>
+							
+							
+							
+							
+						</div>
+					</div>
+				</div>
+				<div class="final" val="113"></div>	
+
+  
+		<script src="general.js"></script>
+				
+				</div>
+				
+				</div>
+
+            </div>
+
+			 <div class="col-md-3">
+                
+				
+								<div class="panel panel-primary">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Vote Reset Countdown</h3>
+				  </div>
+				  <div class="panel-body">
+				<center>
+				<hr></hr>
+				<h1>
+			8 days left.				</h1>
+				<!--<small>Vote Reset</small>-->
+				<hr></hr>
+				</center>
+				 </div>
+				</div>
+				
+		
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Partner Sites</h3>
+				  </div>
+				  <div class="panel-body">
+				  
+					<ul>
+					<li><a href="http://www.limestonenetworks.com/specials/current.html?utm_campaign=rwreferrer&utm_medium=affiliate&utm_source=RFR15536" target="_blank">Dedicated Server Promo</a></li>
+				
+					</ul>
+					
+				
+				
+				  </div>
+				</div>
+				
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GSRight1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4131599256273846"
+     data-ad-slot="6414505482"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<BR>				
+				
+				
+                
+            </div>
+			
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; GameSama Top100 2015 &middot; </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    
+	
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="jquery.countdown.min.js"></script>
+	<script src="general.js"></script>
+	
+
+				
+
+</body></html>
+footer>
+
+    </div>
+    <!-- /.container -->
+
+    
+	
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="jquery.countdown.min.js"></script>
+	<script src="general.js"></script>
+	
+
+				
+
+</body></html>
