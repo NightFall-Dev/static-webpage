@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>GameSama.com - Life's a game, wanna play? | Register</title>
+    <title>GameSama.com - Life's a game, wanna play? | Login</title>
 
     <!-- Bootstrap Core CSS -->
     <script type="text/javascript">
@@ -91,7 +91,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
                         <a href="contact.html">Contact</a>
                     </li>
 										<li class="dropdown ">
-                            <a href="register.html#" class="dropdown-toggle" data-toggle="dropdown">Guest<span class="caret"></span></a>
+                            <a href="login.html#" class="dropdown-toggle" data-toggle="dropdown">Guest<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a href="login.html" >Login</a></li>
                                 <li ><a href="register.html">Register</a></li>
@@ -163,61 +163,48 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
 				
 				 
 				<div id="content">
-							<div class="col-md-12">
+				
+								
+				<div class="col-md-12">
 					<div class="panel panel-primary">
 				  <div class="panel-heading">
-					<h3 class="panel-title">Register</h3>
+					<h3 class="panel-title">Login</h3>
 				  </div>
 				  <div class="panel-body">
 				  
 					<div id="ajax-alert"></div>
 
-					<form class="form-horizontal" method="post" id="ajax-regform">
+					<form class="form-horizontal" method="post" id="ajax-loginform">
 					<div class="form-group">
-					  <label for="regUsername" class="col-lg-2 control-label">Username</label>
+					  <label for="loginUsername" class="col-lg-2 control-label">Username</label>
 					  <div class="col-lg-10">
-						<input type="text" class="form-control" id="regUsername" name="regUsername" placeholder="Username">
+						<input type="text" class="form-control" id="loginUsername" name="loginUsername" placeholder="Username">
 					  </div>
 					</div>
 					<div class="form-group">
-					  <label for="regEmail" class="col-lg-2 control-label">Email</label>
+					  <label for="loginPassword" class="col-lg-2 control-label">Password</label>
 					  <div class="col-lg-10">
-						<input type="text" class="form-control" id="regEmail" name="regEmail" placeholder="Email">
+						<input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password">
 					  </div>
-					</div>
-					<div class="form-group">
-					  <label for="regPassword" class="col-lg-2 control-label">Password</label>
-					  <div class="col-lg-10">
-						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Password">
-					  </div>
-					</div>
-					<div class="form-group">
-					  <label for="regRePassword" class="col-lg-2 control-label">Confirm Password</label>
-					  <div class="col-lg-10">
-						<input type="password" class="form-control" id="regRePassword" name="regRePassword" placeholder="Confirm Password">
-					  </div>
-					</div>
-					<!--INFOLINKS_OFF-->
+					</div><!--INFOLINKS_OFF-->
 					<div class="form-group">
 					<label for="xx" class="col-lg-2 control-label">&nbsp;</label>
 						<div class="col-lg-10">
 						<div class="g-recaptcha" data-sitekey="6Ld0cQgTAAAAAJXPOiifmcAU_R-8DW0jEt5Dfhf5"></div><BR>
-						<input type="hidden" id="regDoReg" name="regDoReg" value="regDoReg">
-						<input type="submit" class="btn btn-primary" id="ajax-register" value="Register">
+						<input type="hidden" id="doLogin" name="doLogin" value="doLogin">
+						<input type="submit" class="btn btn-primary" id="ajax-login" value="Login">
 						</div>
 					</div>
-					<!--INFOLINKS_ON-->
-					
 					</form>
-				
+				<!--INFOLINKS_ON-->
 				
 				
 				  </div>
 				</div>
 				</div>
+			<script src='https://www.google.com/recaptcha/api.js'></script>
 				
 				
-				<script src='https://www.google.com/recaptcha/api.js'></script>
 				</div>
 				<center><script type="text/javascript" src="http://eclkspbn.com/adServe/banners?tid=40712_61191_2&amp;type=footer&amp;size=728x90"></script></center>
 				</div>
